@@ -2,24 +2,18 @@ duplicatedEleArray = elemArray => {
   const count = {};
   const uniqueCount = [];
 
-  elemArray.forEach(ele => {
-    count[ele] = (count[ele] || 0) + 1;
-  });
+  elemArray.forEach(ele => (count[ele] = (count[ele] || 0) + 1));
 
   Object.keys(count).forEach(key => {
     let number = count[key];
     uniqueCount.push(number);
   });
 
-  uniqueCount.sort((a, b) => {
-    return b - a;
-  });
+  uniqueCount.sort((a, b) => b - a);
 
   const maxNumber = uniqueCount[0];
 
-  const OrderCount = Object.keys(count).filter(key => {
-    return count[key] === maxNumber;
-  });
+  const OrderCount = Object.keys(count).filter(key => count[key] === maxNumber);
 
   return OrderCount;
 };
