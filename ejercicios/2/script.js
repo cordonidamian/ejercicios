@@ -13,9 +13,7 @@ duplicatedEleArray = elemArray => {
 
   const maxNumber = uniqueCount[0];
 
-  const OrderCount = Object.keys(count).filter(key => count[key] === maxNumber);
-
-  return OrderCount;
+  return Object.keys(count).filter(key => count[key] === maxNumber);
 };
 
 let elemArray = [
